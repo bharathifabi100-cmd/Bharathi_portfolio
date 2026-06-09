@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bharathi A — Business Analyst</title>
+  <meta name="description" content="Bharathi A — Data-driven Business Analyst and Business Intelligence Specialist skilled in SQL, Power BI, Advanced Excel, and Python." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==================== PRELOADER ==================== -->
+  <div id="preloader">
+    <div class="preloader-name">
+      <span class="preloader-shadow">BHARATHI<span class="preloader-dot-shadow">.</span></span>
+      <span class="preloader-text">BHARATHI<span class="preloader-dot">.</span></span>
+    </div>
+  </div>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" class="nav-transparent">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">B<span class="logo-dot">.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#expertise" class="nav-link" data-section="expertise">Expertise</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#certifications" class="nav-link" data-section="certifications">Certifications</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-hire-btn" id="navHireBtn">Hire Me</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation drawer menu">
+        <svg class="hamburger-icon" id="hamburgerIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="hamburgerPath" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" onclick="closeDrawer()">Home</a></li>
+        <li><a href="#about" onclick="closeDrawer()">About</a></li>
+        <li><a href="#expertise" onclick="closeDrawer()">Expertise</a></li>
+        <li><a href="#skills" onclick="closeDrawer()">Skills</a></li>
+        <li><a href="#projects" onclick="closeDrawer()">Projects</a></li>
+        <li><a href="#certifications" onclick="closeDrawer()">Certifications</a></li>
+        <li><a href="#contact" onclick="closeDrawer()">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="home" class="hero">
+    <!-- Interactive Neural Network Background -->
+    <div class="hero-constellation-bg">
+      <canvas id="heroConstellation" class="hero-constellation-canvas"></canvas>
+    </div>
+
+    <!-- Background video overlay / dark gradient -->
+    <div class="hero-overlay"></div>
+    <div class="hero-grid-bg"></div>
+    <!-- Blobs -->
+    <div class="hero-blob-1"></div>
+    <div class="hero-blob-2"></div>
+
+    <div class="hero-inner">
+      <!-- Left: Text content -->
+      <div class="hero-content" data-aos="fade-up">
+        <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">
+          <span class="badge-icon">📊</span>
+          <span class="badge-text">Business Analyst</span>
+        </div>
+        <h1 class="hero-name" data-aos="fade-up" data-aos-delay="150">
+          Hi, I'm a<br/>
+          <span class="hero-name-highlight">Business Analyst</span>
+        </h1>
+        <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
+          I analyze data, document requirements, track KPIs, and build dashboards with SQL, Power BI, and Python to drive actionable business insights.
+        </p>
+        <div class="hero-btns" data-aos="fade-up" data-aos-delay="400">
+          <a href="#projects" class="btn-outline-white">View Projects</a>
+          <a href="#contact" class="btn-ghost-white">Hire Me</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mute/Unmute Button -->
+    <button class="mute-btn" id="muteBtn" aria-label="Mute Sound">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <line x1="23" y1="9" x2="17" y2="15"/>
+        <line x1="17" y1="9" x2="23" y2="15"/>
+      </svg>
+      <span>Unmute Reel</span>
+    </button>
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll" data-aos="fade-up" data-aos-delay="800">
+      <svg class="hero-scroll-icon" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about" class="about">
+    <div class="about-container">
+      <!-- Left: Photo column -->
+      <div class="about-photo-col" data-aos="fade-right">
+        <div class="about-photo-frame">
+          <img src="assets/bharathi.jpg" alt="Bharathi" class="about-photo" />
+          <div class="about-photo-decor-1"></div>
+          <div class="about-photo-decor-2"></div>
+        </div>
+        <!-- Tech logos -->
+        <div class="about-tech-logos" data-aos="fade-up" data-aos-delay="300">
+          <div class="tech-logo-pill">🛢️ SQL</div>
+          <div class="tech-logo-pill">📊 Power BI</div>
+          <div class="tech-logo-pill">📈 Excel</div>
+        </div>
+      </div>
+
+      <!-- Right: Text column -->
+      <div class="about-text-col">
+        <p class="about-label" data-aos="fade-up">About Me</p>
+        <h2 class="about-heading" data-aos="fade-up" data-aos-delay="100">
+          Hello! I'm <span class="about-name-inline">Bharathi A</span>,
+        </h2>
+        <p class="about-desc" data-aos="fade-up" data-aos-delay="150">
+          a passionate Business Analyst with intern experience in requirement gathering, data analysis, and dashboard development.
+        </p>
+        <p class="about-desc" data-aos="fade-up" data-aos-delay="200">
+          I specialize in translating stakeholder needs into functional specifications (BRD/FRD), building interactive dashboards, and performing data-driven gap analysis to optimize business processes.
+        </p>
+        <div class="about-stats" data-aos="fade-up" data-aos-delay="250">
+          <div class="about-stat">
+            <span class="about-stat-num">6 Mos</span>
+            <span class="about-stat-label">Intern Experience</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-num">20K+</span>
+            <span class="about-stat-label">Records Analyzed</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-num">4+</span>
+            <span class="about-stat-label">Certifications</span>
+          </div>
+        </div>
+        <div class="about-links" data-aos="fade-up" data-aos-delay="300">
+          <a href="#contact" class="btn-dark">Get in Touch</a>
+          <a href="assets/resume.pdf" target="_blank" class="btn-link">Download CV →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERTISE ==================== -->
+  <section id="expertise" class="expertise">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <p class="section-label">What I Do</p>
+        <h2 class="section-title">My <span class="text-red">Expertise</span></h2>
+      </div>
+
+      <div class="expertise-grid">
+        <div class="expertise-card" data-aos="fade-left" data-aos-delay="100">
+          <div class="expertise-number">01</div>
+          <div class="expertise-body">
+            <h3 class="expertise-title">Data Analysis & BI</h3>
+            <p class="expertise-desc">Performing data analysis using SQL, Excel, and Python, and developing interactive Power BI and Tableau dashboards to track KPIs and deliver actionable insights.</p>
+          </div>
+          <div class="card-draw-line"></div>
+        </div>
+
+        <div class="expertise-card card-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="expertise-number">02</div>
+          <div class="expertise-body">
+            <h3 class="expertise-title">Business Analysis & BRD</h3>
+            <p class="expertise-desc">Collaborating with stakeholders to gather requirements, documenting BRD/FRD, and translating complex business needs into clear functional specifications.</p>
+          </div>
+          <div class="card-draw-line"></div>
+        </div>
+
+        <div class="expertise-card" data-aos="fade-right" data-aos-delay="300">
+          <div class="expertise-number">03</div>
+          <div class="expertise-body">
+            <h3 class="expertise-title">Process Improvement</h3>
+            <p class="expertise-desc">Conducting gap analysis and process mapping, identifying workflow improvements, and supporting UAT validation to optimize efficiency and reduce reporting time.</p>
+          </div>
+          <div class="card-draw-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section id="skills" class="skills-section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <p class="section-label">Technologies</p>
+        <h2 class="section-title">My <span class="text-red">Skills</span></h2>
+      </div>
+
+      <div class="skills-categories" data-aos="fade-up" data-aos-delay="100">
+        <div class="skill-category">
+          <h3 class="skill-cat-title">
+            <span class="skill-cat-icon">📊</span>
+            Technical Skills
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Power BI (DAX)</span>
+            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">Advanced Excel</span>
+            <span class="skill-tag">Pivot Tables</span>
+            <span class="skill-tag">Power Query</span>
+            <span class="skill-tag">Data Visualization</span>
+            <span class="skill-tag">KPI Tracking</span>
+            <span class="skill-tag">Data Analysis</span>
+            <span class="skill-tag">Data Cleaning</span>
+            <span class="skill-tag">Python (Pandas)</span>
+            <span class="skill-tag">Google Analytics</span>
+            <span class="skill-tag">A/B Testing</span>
+            <span class="skill-tag">Forecasting</span>
+            <span class="skill-tag">Insights Communication</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="150">
+          <h3 class="skill-cat-title">
+            <span class="skill-cat-icon">📈</span>
+            Business & Analysis
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Requirement Gathering</span>
+            <span class="skill-tag">BRD/FRD Documentation</span>
+            <span class="skill-tag">Stakeholder Management</span>
+            <span class="skill-tag">Business Analysis</span>
+            <span class="skill-tag">Process Improvement</span>
+            <span class="skill-tag">UAT Support</span>
+            <span class="skill-tag">SDLC</span>
+            <span class="skill-tag">Agile (Basic)</span>
+            <span class="skill-tag">Jira</span>
+          </div>
+        </div>
+
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="skill-cat-title">
+            <span class="skill-cat-icon">🛠️</span>
+            Tools & Databases
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Power BI Desktop</span>
+            <span class="skill-tag">Tableau Desktop</span>
+            <span class="skill-tag">Microsoft Excel</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Jupyter Notebooks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section id="projects" class="projects-section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <p class="section-label dark">Featured Work</p>
+        <h2 class="section-title dark">My <span class="text-red">Projects</span></h2>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-top">
+            <div class="project-category">Healthcare Analytics</div>
+            <div class="project-links">
+              <a href="https://github.com/bharathifabi100-cmd" target="_blank" class="project-link-btn" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Healthcare Analytics with SQL</h3>
+          <p class="project-desc">Used SQL to analyze healthcare data, perform patient and doctor-level reporting, and identify key trends in appointments and treatment outcomes.</p>
+          <div class="project-tags">
+            <span>SQL</span><span>Healthcare</span><span>Reporting</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="project-top">
+            <div class="project-category">Customer Analytics</div>
+            <div class="project-links">
+              <a href="https://github.com/bharathifabi100-cmd" target="_blank" class="project-link-btn" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Customer Demographics & Purchase Behavior</h3>
+          <p class="project-desc">Analyzed customer demographics and purchasing patterns using Excel and Power BI for data visualization, preparation, and cleaning.</p>
+          <div class="project-tags">
+            <span>Excel</span><span>Power BI</span><span>Statistics</span>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-top">
+            <div class="project-category">Digital Marketing</div>
+            <div class="project-links">
+              <a href="https://github.com/bharathifabi100-cmd" target="_blank" class="project-link-btn" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Digital Marketing Campaign Insights</h3>
+          <p class="project-desc">Analyzed marketing data and tracked campaign performance using a combination of SQL, Excel, Power BI, and Tableau.</p>
+          <div class="project-tags">
+            <span>SQL</span><span>Tableau</span><span>Power BI</span><span>Excel</span>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-top">
+            <div class="project-category">Retail & Inventory</div>
+            <div class="project-links">
+              <a href="https://github.com/bharathifabi100-cmd" target="_blank" class="project-link-btn" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Retail Sales & Inventory Intelligence System</h3>
+          <p class="project-desc">Built an end-to-end analytics solution to track sales trends, inventory levels, and business KPIs using Excel, SQL, Power BI, and Python.</p>
+          <div class="project-tags">
+            <span>Python</span><span>SQL</span><span>Power BI</span><span>Pandas</span>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="project-top">
+            <div class="project-category">AI & Automation</div>
+            <div class="project-links">
+              <a href="https://github.com/bharathifabi100-cmd" target="_blank" class="project-link-btn" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">AI SQL Analytics Agent with n8n</h3>
+          <p class="project-desc">Automated SQL analytics workflow using n8n, MySQL, and Ollama AI to convert natural language into SQL queries, generate reports, extract insights, and deliver automated email reports.</p>
+          <div class="project-tags">
+            <span>n8n</span><span>MySQL</span><span>Ollama AI</span><span>Automation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements row -->
+      <div class="mini-projects" data-aos="fade-up">
+        <h3 class="mini-projects-title">Achievements & Hackathons</h3>
+        <div class="mini-grid">
+          <div class="mini-card"><span class="mini-lang js-lang">🏆</span>DashQuest 3.0 Runner-Up (GUVI | HCL)</div>
+          <div class="mini-card"><span class="mini-lang js-lang">💻</span>Niral Thiruvizha 2.0 (Hackathon)</div>
+          <div class="mini-card"><span class="mini-lang js-lang">🚀</span>Yuakti (MoE's & IIC)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CERTIFICATIONS ==================== -->
+  <section id="certifications" class="certs-section">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <p class="section-label">Achievements</p>
+        <h2 class="section-title">My <span class="text-red">Certifications</span></h2>
+      </div>
+
+      <div class="certs-scroll-wrap">
+        <div class="certs-track" id="certsTrack">
+          <!-- Cert 1 -->
+          <div class="cert-card" data-aos="flip-left" data-aos-delay="50">
+            <div class="cert-top">
+              <span class="cert-badge data">Data Analytics</span>
+              <a href="#" class="cert-pdf">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Verify
+              </a>
+            </div>
+            <h4 class="cert-title">GenAI Powered Data Analytics Virtual Intern</h4>
+            <p class="cert-issuer">Tata (Forage)</p>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="cert-card" data-aos="flip-left" data-aos-delay="100">
+            <div class="cert-top">
+              <span class="cert-badge data">Data Analytics</span>
+              <a href="#" class="cert-pdf">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Verify
+              </a>
+            </div>
+            <h4 class="cert-title">Data Analytics Virtual Intern</h4>
+            <p class="cert-issuer">Deloitte (Forage)</p>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="cert-card" data-aos="flip-left" data-aos-delay="150">
+            <div class="cert-top">
+              <span class="cert-badge security">SQL</span>
+              <a href="#" class="cert-pdf">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Verify
+              </a>
+            </div>
+            <h4 class="cert-title">SQL Intermediate</h4>
+            <p class="cert-issuer">HackerRank</p>
+          </div>
+
+          <!-- Cert 4 -->
+          <div class="cert-card" data-aos="flip-left" data-aos-delay="200">
+            <div class="cert-top">
+              <span class="cert-badge cloud">Business Analytics</span>
+              <a href="#" class="cert-pdf">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Verify
+              </a>
+            </div>
+            <h4 class="cert-title">Business Analytics & Digital Marketing with AI Tools</h4>
+            <p class="cert-issuer">IIT-M (GUVI | HCL)</p>
+          </div>
+        </div>
+      </div>
+      <div class="certs-nav">
+        <button class="cert-nav-btn" id="certPrev" aria-label="Previous">←</button>
+        <button class="cert-nav-btn" id="certNext" aria-label="Next">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" class="contact-section">
+    <div class="contact-big-text">Contact</div>
+
+    <div class="contact-inner">
+      <div class="contact-bottom-bar">
+        <div class="contact-left-info">
+          <a href="#about" class="contact-info-link underline-link">6+ Months Intern Experience</a>
+          <a href="#projects" class="contact-info-link underline-link">View Work</a>
+        </div>
+        <div class="contact-right-info">
+          <p>Worldwide Available</p>
+          <p id="currentYear"></p>
+        </div>
+      </div>
+
+      <div class="contact-name-bg">BHARATHI</div>
+
+      <div class="contact-form-area">
+        <div class="contact-form-left">
+          <h2 class="contact-form-title">Get In Touch</h2>
+          <p class="contact-form-sub">Have a project in mind? Let's build something amazing together.</p>
+          <div class="contact-social-links">
+            <a href="mailto:Bharathiarivu100@gmail.com" class="contact-social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Bharathiarivu100@gmail.com
+            </a>
+            <a href="https://github.com/bharathifabi100-cmd" target="_blank" class="contact-social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              github.com/bharathifabi100-cmd
+            </a>
+            <a href="https://linkedin.com/in/bharathi-a-fabbie7" target="_blank" class="contact-social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              linkedin.com/in/bharathi-a-fabbie7
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row-2">
+            <div class="form-field">
+              <input type="text" id="firstName" name="firstName" placeholder="First Name" required class="form-input" />
+            </div>
+            <div class="form-field">
+              <input type="text" id="lastName" name="lastName" placeholder="Last Name" required class="form-input" />
+            </div>
+          </div>
+          <div class="form-field">
+            <input type="email" id="email" name="email" placeholder="Email" required class="form-input" />
+          </div>
+          <div class="form-field">
+            <textarea id="message" name="message" placeholder="Your message..." rows="5" required class="form-input form-textarea"></textarea>
+          </div>
+          <button type="submit" class="form-submit-btn" id="submitBtn">
+            <span id="submitText">Send Message</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">B<span class="logo-dot">.</span></span>
+      <p class="footer-copy">© <span id="footerYear"></span> Bharathi A. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
