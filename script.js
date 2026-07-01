@@ -410,33 +410,23 @@ function handleSubmit(e) {
 
   fetch(GOOGLE_SHEET_WEB_APP_URL, {
     method: 'POST',
-    body: formData
+    body: formData,
+    mode: 'no-cors' // Bypasses CORS redirect block on Google Apps Script Web Apps
   })
-  .then(response => {
-    if (response.ok) {
-      showSuccess(btn, submitText);
-    } else {
-      throw new Error('Network response was not ok');
-    }
+  .then(() => {
+    // When using 'no-cors', the response type is 'opaque', meaning we can't read status
+    // but the request did complete successfully without throwing a CORS exception.
+    showSuccess(btn, submitText);
   })
   .catch(error => {
     console.error('Error submitting form:', error);
-    submitText.textContent = '❌ Failed!';
-    btn.style.background = '#dc2626';
-    btn.style.borderColor = '#dc2626';
-    btn.style.color = '#fff';
-    
-    setTimeout(() => {
-      resetButton(btn, submitText);
-    }, 3000);
+    showError(btn, submitText);
   });
 }
 
 function showSuccess(btn, submitText) {
   submitText.textContent = '✓ Sent!';
-  btn.style.background = '#16a34a';
-  btn.style.borderColor = '#16a34a';
-  btn.style.color = '#fff';
+  btn.classList.add('success');
 
   setTimeout(() => {
     resetButton(btn, submitText);
@@ -444,13 +434,20 @@ function showSuccess(btn, submitText) {
   }, 3000);
 }
 
+function showError(btn, submitText) {
+  submitText.textContent = '❌ Failed!';
+  btn.classList.add('error');
+  
+  setTimeout(() => {
+    resetButton(btn, submitText);
+  }, 3000);
+}
+
 function resetButton(btn, submitText) {
   submitText.textContent = 'Send Message';
   btn.disabled = false;
   btn.style.opacity = '';
-  btn.style.background = '';
-  btn.style.borderColor = '';
-  btn.style.color = '';
+  btn.classList.remove('success', 'error');
 }
 
 // ============================================
