@@ -348,14 +348,16 @@ button { cursor: pointer; font-family: var(--font); }
   padding: 100px 48px 60px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 64px;
   width: 100%;
 }
 
 /* Hero content */
 .hero-content {
-  flex: 1;
-  max-width: 560px;
+  flex: unset;
+  max-width: 700px;
+  text-align: center;
 }
 
 .hero-badge {
@@ -398,7 +400,8 @@ button { cursor: pointer; font-family: var(--font); }
   content: '';
   position: absolute;
   bottom: -4px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
   height: 4px;
   background: var(--red);
@@ -410,13 +413,16 @@ button { cursor: pointer; font-family: var(--font); }
   color: rgba(255,255,255,0.7);
   line-height: 1.75;
   margin-bottom: 36px;
-  max-width: 420px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
   font-weight: 500;
 }
 
 .hero-btns {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
 }
@@ -840,6 +846,7 @@ button { cursor: pointer; font-family: var(--font); }
 .skills-section {
   background: var(--gray-100);
   padding: 100px 0;
+  overflow: hidden;
   background-image: 
     linear-gradient(to right, rgba(128,128,128,0.06) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(128,128,128,0.06) 1px, transparent 1px);
@@ -1558,4 +1565,119 @@ button { cursor: pointer; font-family: var(--font); }
   .hero-name { font-size: 2.2rem; }
   .mini-grid { grid-template-columns: 1fr; }
   .about-photo-col { flex-direction: column; }
+}
+
+/* ============================================
+   TOOLS TICKER / MARQUEE  (HORIZONTAL)
+   ============================================ */
+
+.tools-ticker-section {
+  margin-top: 0;
+  margin-bottom: 48px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.tools-ticker-label {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  margin-bottom: 28px;
+}
+
+.tools-ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 8px 0 16px;
+  /* fade left and right edges */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.tools-ticker-track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: max-content;
+  will-change: transform;
+  animation: toolsTickerH 28s linear infinite;
+}
+
+
+@keyframes toolsTickerH {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-shrink: 0;
+  width: 110px;
+  padding: 18px 12px;
+  margin: 0 8px;
+  background: var(--white);
+  border: 1.5px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: default;
+}
+
+.ticker-item:hover {
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+  border-color: var(--red);
+}
+
+.ticker-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.ticker-item span {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .ticker-item {
+    width: 85px;
+    padding: 14px 8px;
+  }
+  .ticker-item img {
+    width: 30px;
+    height: 30px;
+  }
+  .ticker-item span {
+    font-size: 0.6rem;
+  }
 }
