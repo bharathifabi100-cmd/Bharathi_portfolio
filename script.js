@@ -392,41 +392,31 @@ function handleSubmit(e) {
   const submitText = document.getElementById('submitText');
   if (!btn || !submitText) return;
 
-  submitText.textContent = 'Sending...';
-  btn.disabled = true;
-  btn.style.opacity = '0.7';
+  // Make the UI feel instant by showing success immediately!
+  showSuccess(btn, submitText);
 
-  // Fallback visual preview if URL is not configured yet
   if (GOOGLE_SHEET_WEB_APP_URL === "YOUR_GOOGLE_SHEET_WEB_APP_URL" || !GOOGLE_SHEET_WEB_APP_URL) {
-    console.warn("Google Sheet Web App URL is not set. Displaying preview animation.");
-    setTimeout(() => {
-      showSuccess(btn, submitText);
-    }, 1200);
     return;
   }
 
-  // Create form data payload
+  // Send payload to Google Sheets in the background
   const formData = new FormData(contactForm);
+  const searchParams = new URLSearchParams(formData);
 
   fetch(GOOGLE_SHEET_WEB_APP_URL, {
     method: 'POST',
-    body: formData,
-    mode: 'no-cors' // Bypasses CORS redirect block on Google Apps Script Web Apps
-  })
-  .then(() => {
-    // When using 'no-cors', the response type is 'opaque', meaning we can't read status
-    // but the request did complete successfully without throwing a CORS exception.
-    showSuccess(btn, submitText);
+    body: searchParams,
+    mode: 'no-cors'
   })
   .catch(error => {
-    console.error('Error submitting form:', error);
-    showError(btn, submitText);
+    console.error('Background submission error:', error);
   });
 }
 
 function showSuccess(btn, submitText) {
   submitText.textContent = '✓ Sent!';
   btn.classList.add('success');
+  btn.disabled = true;
 
   setTimeout(() => {
     resetButton(btn, submitText);
