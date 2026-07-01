@@ -1421,6 +1421,28 @@ button { cursor: pointer; font-family: var(--font); }
   color: var(--white);
 }
 
+.form-submit-btn.success {
+  background: #16a34a !important;
+  border-color: #16a34a !important;
+  color: #ffffff !important;
+}
+
+.form-submit-btn.success:hover {
+  background: #16a34a !important;
+  color: #ffffff !important;
+}
+
+.form-submit-btn.error {
+  background: #dc2626 !important;
+  border-color: #dc2626 !important;
+  color: #ffffff !important;
+}
+
+.form-submit-btn.error:hover {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+}
+
 /* ============================================
    FOOTER
    ============================================ */
