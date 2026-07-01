@@ -378,6 +378,9 @@ if (muteBtn) {
 // ============================================
 // CONTACT FORM
 // ============================================
+// ⚠️ Set your deployed Google Sheets Web App URL below:
+const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycby_pGHxY2mHwFxclnzUjAKVG8e3IIZOhSkZ2cdoWqLYeXiDUsihADxIhh3t4yHcecC1/exec";
+
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', handleSubmit);
@@ -393,22 +396,61 @@ function handleSubmit(e) {
   btn.disabled = true;
   btn.style.opacity = '0.7';
 
-  setTimeout(() => {
-    submitText.textContent = '✓ Sent!';
-    btn.style.background = '#16a34a';
-    btn.style.borderColor = '#16a34a';
-    btn.style.color = '#fff';
-
+  // Fallback visual preview if URL is not configured yet
+  if (GOOGLE_SHEET_WEB_APP_URL === "YOUR_GOOGLE_SHEET_WEB_APP_URL" || !GOOGLE_SHEET_WEB_APP_URL) {
+    console.warn("Google Sheet Web App URL is not set. Displaying preview animation.");
     setTimeout(() => {
-      submitText.textContent = 'Send Message';
-      btn.disabled = false;
-      btn.style.opacity = '';
-      btn.style.background = '';
-      btn.style.borderColor = '';
-      btn.style.color = '';
-      contactForm.reset();
+      showSuccess(btn, submitText);
+    }, 1200);
+    return;
+  }
+
+  // Create form data payload
+  const formData = new FormData(contactForm);
+
+  fetch(GOOGLE_SHEET_WEB_APP_URL, {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      showSuccess(btn, submitText);
+    } else {
+      throw new Error('Network response was not ok');
+    }
+  })
+  .catch(error => {
+    console.error('Error submitting form:', error);
+    submitText.textContent = '❌ Failed!';
+    btn.style.background = '#dc2626';
+    btn.style.borderColor = '#dc2626';
+    btn.style.color = '#fff';
+    
+    setTimeout(() => {
+      resetButton(btn, submitText);
     }, 3000);
-  }, 1800);
+  });
+}
+
+function showSuccess(btn, submitText) {
+  submitText.textContent = '✓ Sent!';
+  btn.style.background = '#16a34a';
+  btn.style.borderColor = '#16a34a';
+  btn.style.color = '#fff';
+
+  setTimeout(() => {
+    resetButton(btn, submitText);
+    contactForm.reset();
+  }, 3000);
+}
+
+function resetButton(btn, submitText) {
+  submitText.textContent = 'Send Message';
+  btn.disabled = false;
+  btn.style.opacity = '';
+  btn.style.background = '';
+  btn.style.borderColor = '';
+  btn.style.color = '';
 }
 
 // ============================================
