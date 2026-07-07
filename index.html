@@ -7,7 +7,7 @@
   <meta name="description" content="Bharathi A — Data-driven Business Analyst and Business Intelligence Specialist skilled in SQL, Power BI, Advanced Excel, and Python." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -25,128 +25,122 @@
     <div class="nav-container">
       <a href="#" class="nav-logo">B<span class="logo-dot">.</span></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
         <li><a href="#about" class="nav-link" data-section="about">About</a></li>
         <li><a href="#expertise" class="nav-link" data-section="expertise">Expertise</a></li>
         <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
         <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
         <li><a href="#certifications" class="nav-link" data-section="certifications">Certifications</a></li>
         <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        <li class="nav-indicator" id="navIndicator"></li>
       </ul>
-      <a href="#contact" class="nav-hire-btn" id="navHireBtn">Hire Me</a>
+
+      <!-- Desktop Social Icons (top-right) -->
+      <div class="nav-social-icons">
+        <a href="https://github.com/bharathifabi100-cmd" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/bharathi-a-fabbie7" target="_blank" rel="noopener noreferrer" class="nav-social-link" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="mailto:bharathifabi100@gmail.com" class="nav-social-link" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+      </div>
+
       <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation drawer menu">
-        <svg class="hamburger-icon" id="hamburgerIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path id="hamburgerPath" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/>
+        <svg class="hamburger-icon" id="hamburgerIcon" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+          <circle cx="5" cy="12" r="2" />
+          <circle cx="12" cy="12" r="2" />
+          <circle cx="19" cy="12" r="2" />
         </svg>
       </button>
     </div>
     <!-- Mobile Drawer -->
     <div class="mobile-drawer" id="mobileDrawer">
       <ul class="mobile-nav-links">
-        <li><a href="#home" onclick="closeDrawer()">Home</a></li>
-        <li><a href="#about" onclick="closeDrawer()">About</a></li>
-        <li><a href="#expertise" onclick="closeDrawer()">Expertise</a></li>
-        <li><a href="#skills" onclick="closeDrawer()">Skills</a></li>
-        <li><a href="#projects" onclick="closeDrawer()">Projects</a></li>
-        <li><a href="#certifications" onclick="closeDrawer()">Certifications</a></li>
-        <li><a href="#contact" onclick="closeDrawer()">Contact</a></li>
+        <li><a href="#about" class="mobile-nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="mobile-nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- ==================== HERO ==================== -->
   <section id="home" class="hero">
+    <!-- Anchor to support About links scrolling here -->
+    <div id="about" style="position: absolute; top: 0; left: 0; width: 1px; height: 1px; pointer-events: none;"></div>
     <!-- Interactive Neural Network Background -->
     <div class="hero-constellation-bg">
       <canvas id="heroConstellation" class="hero-constellation-canvas"></canvas>
     </div>
-
-    <!-- Background video overlay / dark gradient -->
-    <div class="hero-overlay"></div>
+    <!-- Grid overlay & decorative elements -->
     <div class="hero-grid-bg"></div>
     <!-- Blobs -->
     <div class="hero-blob-1"></div>
     <div class="hero-blob-2"></div>
 
     <div class="hero-inner">
-      <!-- Left: Text content -->
-      <div class="hero-content" data-aos="fade-up">
-        <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">
-          <span class="badge-icon">📊</span>
-          <span class="badge-text">Business Analyst</span>
-        </div>
-        <h1 class="hero-name" data-aos="fade-up" data-aos-delay="150">
-          Hi, I'm a<br/>
-          <span class="hero-name-highlight">Business Analyst</span>
-        </h1>
-        <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
-          I analyze data, document requirements, track KPIs, and build dashboards with SQL, Power BI, and Python to drive actionable business insights.
-        </p>
-        <div class="hero-btns" data-aos="fade-up" data-aos-delay="400">
-          <a href="#projects" class="btn-outline-white">View Projects</a>
-          <a href="#contact" class="btn-ghost-white">Hire Me</a>
+      <!-- Mobile Hero Navigation -->
+      <div class="mobile-hero-nav" data-aos="fade-up" data-aos-delay="50">
+        <a href="#about" class="mobile-nav-link" data-section="about">Intro</a>
+        <a href="#expertise" class="mobile-nav-link" data-section="expertise">Expertise</a>
+        <a href="#certifications" class="mobile-nav-link" data-section="certifications">Certifications</a>
+        <a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a>
+      </div>
+
+
+      <!-- Combined Hero/About Layout -->
+      <div class="hero-about-container">
+        <!-- Text column aligned to left -->
+        <div class="about-text-col">
+          <p class="about-label" data-aos="fade-up"><span class="status-dot"></span>Available for work</p>
+          <h2 class="about-heading" data-aos="fade-up" data-aos-delay="100">
+            <span class="greeting-prefix">Hello, I'm</span>
+            <span class="about-name-inline">Bharathi A</span>
+          </h2>
+          <h3 class="typing-heading" data-aos="fade-up" data-aos-delay="120">
+            <span class="text-red" id="typingText"></span><span class="typing-cursor">|</span>
+          </h3>
+          <p class="about-desc" data-aos="fade-up" data-aos-delay="150">
+            Passionate <strong class="highlight-text">Business Analyst</strong> with internship experience in <strong class="highlight-text">Requirement Gathering</strong>, <strong class="highlight-text">Business Analysis</strong>, Data Analysis, and Business Intelligence. Skilled in translating stakeholder needs into <strong class="highlight-text">BRDs, FRDs</strong>, and Functional Specifications, while leveraging <strong class="highlight-text">SQL</strong>, Excel, <strong class="highlight-text">Power BI</strong>, and Python to build interactive dashboards, perform <strong class="highlight-text">Gap Analysis</strong>, and deliver data-driven <strong class="highlight-text">business insights</strong>.
+          </p>
+          <div class="about-stats" data-aos="fade-up" data-aos-delay="250">
+            <div class="about-stat">
+              <span class="about-stat-num">6 Month</span>
+              <span class="about-stat-label">Intern Experience</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-num">20K+</span>
+              <span class="about-stat-label">Records Analyzed</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-num">4+</span>
+              <span class="about-stat-label">Certifications</span>
+            </div>
+          </div>
+          <div class="about-links" data-aos="fade-up" data-aos-delay="300">
+            <a href="#contact" class="btn-outline-white">Get in Touch</a>
+            <a href="https://drive.google.com/file/d/1yuBnv6RojJz_aSX8dDxIBFcUDQd7YeTJ/view?usp=sharing" target="_blank" class="btn-ghost-white">Download CV →</a>
+          </div>
         </div>
       </div>
     </div>
-
 
     <!-- Scroll indicator -->
     <div class="hero-scroll" data-aos="fade-up" data-aos-delay="800">
       <svg class="hero-scroll-icon" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" stroke="currentColor">
         <path d="M19 9l-7 7-7-7"/>
       </svg>
-    </div>
-  </section>
-
-  <!-- ==================== ABOUT ==================== -->
-  <section id="about" class="about">
-    <div class="about-container">
-      <!-- Left: Photo column -->
-      <div class="about-photo-col" data-aos="fade-right">
-        <div class="about-photo-frame">
-          <img src="assets/bharathi.jpg" alt="Bharathi" class="about-photo" />
-          <div class="about-photo-decor-1"></div>
-          <div class="about-photo-decor-2"></div>
-        </div>
-        <!-- Tech logos -->
-        <div class="about-tech-logos" data-aos="fade-up" data-aos-delay="300">
-          <div class="tech-logo-pill">🛢️ SQL</div>
-          <div class="tech-logo-pill">📊 Power BI</div>
-          <div class="tech-logo-pill">📈 Excel</div>
-        </div>
-      </div>
-
-      <!-- Right: Text column -->
-      <div class="about-text-col">
-        <p class="about-label" data-aos="fade-up">About Me</p>
-        <h2 class="about-heading" data-aos="fade-up" data-aos-delay="100">
-          Hello! I'm <span class="about-name-inline">Bharathi A</span>,
-        </h2>
-        <p class="about-desc" data-aos="fade-up" data-aos-delay="150">
-          a passionate Business Analyst with intern experience in requirement gathering, data analysis, and dashboard development.
-        </p>
-        <p class="about-desc" data-aos="fade-up" data-aos-delay="200">
-          I specialize in translating stakeholder needs into functional specifications (BRD/FRD), building interactive dashboards, and performing data-driven gap analysis to optimize business processes.
-        </p>
-        <div class="about-stats" data-aos="fade-up" data-aos-delay="250">
-          <div class="about-stat">
-            <span class="about-stat-num">6 Mos</span>
-            <span class="about-stat-label">Intern Experience</span>
-          </div>
-          <div class="about-stat">
-            <span class="about-stat-num">20K+</span>
-            <span class="about-stat-label">Records Analyzed</span>
-          </div>
-          <div class="about-stat">
-            <span class="about-stat-num">4+</span>
-            <span class="about-stat-label">Certifications</span>
-          </div>
-        </div>
-        <div class="about-links" data-aos="fade-up" data-aos-delay="300">
-          <a href="#contact" class="btn-dark">Get in Touch</a>
-          <a href="https://drive.google.com/file/d/1yuBnv6RojJz_aSX8dDxIBFcUDQd7YeTJ/view?usp=sharing" target="_blank" class="btn-link">Download CV →</a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -162,8 +156,8 @@
         <div class="expertise-card" data-aos="fade-left" data-aos-delay="100">
           <div class="expertise-number">01</div>
           <div class="expertise-body">
-            <h3 class="expertise-title">Data Analysis & BI</h3>
-            <p class="expertise-desc">Performing data analysis using SQL, Excel, and Python, and developing interactive Power BI and Tableau dashboards to track KPIs and deliver actionable insights.</p>
+            <h3 class="expertise-title">Business Requirement Analysis</h3>
+            <p class="expertise-desc">Gather, analyze, and document business requirements through stakeholder discussions, creating BRDs, FRDs, user stories, and functional specifications to support effective solution delivery.</p>
           </div>
           <div class="card-draw-line"></div>
         </div>
@@ -171,8 +165,8 @@
         <div class="expertise-card card-center" data-aos="fade-up" data-aos-delay="200">
           <div class="expertise-number">02</div>
           <div class="expertise-body">
-            <h3 class="expertise-title">Business Analysis & BRD</h3>
-            <p class="expertise-desc">Collaborating with stakeholders to gather requirements, documenting BRD/FRD, and translating complex business needs into clear functional specifications.</p>
+            <h3 class="expertise-title">Process Analysis & Solution Design</h3>
+            <p class="expertise-desc">Analyze business workflows, perform gap analysis, prepare process documentation, and support UAT to ensure solutions meet business requirements and improve operational efficiency.</p>
           </div>
           <div class="card-draw-line"></div>
         </div>
@@ -180,8 +174,8 @@
         <div class="expertise-card" data-aos="fade-right" data-aos-delay="300">
           <div class="expertise-number">03</div>
           <div class="expertise-body">
-            <h3 class="expertise-title">Process Improvement</h3>
-            <p class="expertise-desc">Conducting gap analysis and process mapping, identifying workflow improvements, and supporting UAT validation to optimize efficiency and reduce reporting time.</p>
+            <h3 class="expertise-title">Analytics & Decision Support</h3>
+            <p class="expertise-desc">Leverage SQL, Excel, Power BI, and Python to analyze business data, build interactive dashboards, monitor KPIs, and deliver insights that support strategic business decisions.</p>
           </div>
           <div class="card-draw-line"></div>
         </div>
@@ -199,7 +193,7 @@
 
       <!-- ===== TOOLS TICKER ===== -->
       <div class="tools-ticker-section" data-aos="fade-up" data-aos-delay="200">
-        <p class="tools-ticker-label">Tools I Work With</p>
+        <p class="tools-ticker-label">Tools I Know</p>
         <div class="tools-ticker-wrap">
           <div class="tools-ticker-track">
 
@@ -316,12 +310,18 @@
       </div>
       <!-- ===== END TOOLS TICKER ===== -->
 
-      <div class="skills-categories" data-aos="fade-up" data-aos-delay="100">
-        <div class="skill-category">
-          <h3 class="skill-cat-title">
-            <span class="skill-cat-icon">📊</span>
-            Technical Skills
-          </h3>
+      <div class="skills-categories-grid" data-aos="fade-up" data-aos-delay="100">
+        <!-- Technical Skills Card -->
+        <div class="skill-category-card" onclick="toggleSkillCard(this)">
+          <div class="skill-card-header">
+            <div class="skill-card-icon-wrap gradient-red">📊</div>
+            <div class="skill-card-info-wrap">
+              <h3>Technical Skills</h3>
+              <p>15 skills</p>
+            </div>
+            <div class="skill-card-toggle-btn">+</div>
+          </div>
+          
           <div class="skill-tags">
             <span class="skill-tag">SQL</span>
             <span class="skill-tag">Power BI (DAX)</span>
@@ -339,13 +339,86 @@
             <span class="skill-tag">Forecasting</span>
             <span class="skill-tag">Insights Communication</span>
           </div>
+
+          <!-- Collapsible Proficiency Bars -->
+          <div class="skill-proficiency-panel">
+            <div class="proficiency-divider"></div>
+            <div class="proficiency-list">
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>SQL</span><span>92%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 92%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Power BI (DAX)</span><span>90%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 90%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Tableau</span><span>85%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 85%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Advanced Excel</span><span>95%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 95%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Pivot Tables</span><span>92%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 92%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Power Query</span><span>88%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 88%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Data Visualization</span><span>90%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 90%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>KPI Tracking</span><span>88%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 88%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Data Analysis</span><span>92%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 92%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Data Cleaning</span><span>90%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 90%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Python (Pandas)</span><span>82%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 82%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Google Analytics</span><span>80%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 80%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>A/B Testing</span><span>75%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 75%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Forecasting</span><span>78%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 78%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Insights Communication</span><span>88%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 88%"></div></div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="150">
-          <h3 class="skill-cat-title">
-            <span class="skill-cat-icon">📈</span>
-            Business & Analysis
-          </h3>
+        <!-- Business & Analysis Card -->
+        <div class="skill-category-card" onclick="toggleSkillCard(this)">
+          <div class="skill-card-header">
+            <div class="skill-card-icon-wrap gradient-blue">📈</div>
+            <div class="skill-card-info-wrap">
+              <h3>Business & Analysis</h3>
+              <p>9 skills</p>
+            </div>
+            <div class="skill-card-toggle-btn">+</div>
+          </div>
+          
           <div class="skill-tags">
             <span class="skill-tag">Requirement Gathering</span>
             <span class="skill-tag">BRD/FRD Documentation</span>
@@ -357,8 +430,52 @@
             <span class="skill-tag">Agile (Basic)</span>
             <span class="skill-tag">Jira</span>
           </div>
+
+          <!-- Collapsible Proficiency Bars -->
+          <div class="skill-proficiency-panel">
+            <div class="proficiency-divider"></div>
+            <div class="proficiency-list">
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Requirement Gathering</span><span>92%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 92%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>BRD/FRD Documentation</span><span>90%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 90%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Stakeholder Management</span><span>88%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 88%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Business Analysis</span><span>92%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 92%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Process Improvement</span><span>85%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 85%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>UAT Support</span><span>88%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 88%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>SDLC</span><span>85%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 85%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Agile (Basic)</span><span>80%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 80%"></div></div>
+              </div>
+              <div class="proficiency-item">
+                <div class="proficiency-info"><span>Jira</span><span>85%</span></div>
+                <div class="proficiency-bar"><div class="proficiency-fill" style="--level: 85%"></div></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <p class="skills-helper-text" data-aos="fade-up">💡 Click any card to see proficiency levels</p>
 
     </div>
   </section>
@@ -376,16 +493,11 @@
         <div class="project-card" data-aos="fade-up" data-aos-delay="100">
           <div class="project-top">
             <div class="project-category">Healthcare Analytics</div>
-            <div class="project-links">
-              <a href="https://github.com/bharathifabi100-cmd" target="_blank" class="project-link-btn" aria-label="GitHub">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
           </div>
           <h3 class="project-title">Healthcare Analytics with SQL</h3>
           <p class="project-desc">Used SQL to analyze healthcare data, perform patient and doctor-level reporting, and identify key trends in appointments and treatment outcomes.</p>
           <div class="project-tags">
-            <span>SQL</span><span>Healthcare</span><span>Reporting</span>
+            <span>🛢️ SQL</span><span>🏥 Healthcare</span><span>📊 Reporting</span>
           </div>
         </div>
 
@@ -393,16 +505,11 @@
         <div class="project-card" data-aos="fade-up" data-aos-delay="150">
           <div class="project-top">
             <div class="project-category">Customer Analytics</div>
-            <div class="project-links">
-              <a href="https://github.com/bharathifabi100-cmd" target="_blank" class="project-link-btn" aria-label="GitHub">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
           </div>
           <h3 class="project-title">Customer Demographics & Purchase Behavior</h3>
           <p class="project-desc">Analyzed customer demographics and purchasing patterns using Excel and Power BI for data visualization, preparation, and cleaning.</p>
           <div class="project-tags">
-            <span>Excel</span><span>Power BI</span><span>Statistics</span>
+            <span>📈 Excel</span><span>📊 Power BI</span><span>🔢 Statistics</span>
           </div>
         </div>
 
@@ -410,16 +517,11 @@
         <div class="project-card" data-aos="fade-up" data-aos-delay="200">
           <div class="project-top">
             <div class="project-category">Digital Marketing</div>
-            <div class="project-links">
-              <a href="https://github.com/bharathifabi100-cmd" target="_blank" class="project-link-btn" aria-label="GitHub">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
           </div>
           <h3 class="project-title">Digital Marketing Campaign Insights</h3>
           <p class="project-desc">Analyzed marketing data and tracked campaign performance using a combination of SQL, Excel, Power BI, and Tableau.</p>
           <div class="project-tags">
-            <span>SQL</span><span>Tableau</span><span>Power BI</span><span>Excel</span>
+            <span>🛢️ SQL</span><span>📊 Tableau</span><span>📊 Power BI</span><span>📈 Excel</span>
           </div>
         </div>
 
@@ -427,16 +529,11 @@
         <div class="project-card" data-aos="fade-up" data-aos-delay="100">
           <div class="project-top">
             <div class="project-category">Retail & Inventory</div>
-            <div class="project-links">
-              <a href="https://github.com/bharathifabi100-cmd" target="_blank" class="project-link-btn" aria-label="GitHub">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
           </div>
           <h3 class="project-title">Retail Sales & Inventory Intelligence System</h3>
           <p class="project-desc">Built an end-to-end analytics solution to track sales trends, inventory levels, and business KPIs using Excel, SQL, Power BI, and Python.</p>
           <div class="project-tags">
-            <span>Python</span><span>SQL</span><span>Power BI</span><span>Pandas</span>
+            <span>🐍 Python</span><span>🛢️ SQL</span><span>📊 Power BI</span><span>🐼 Pandas</span>
           </div>
         </div>
 
@@ -444,16 +541,11 @@
         <div class="project-card" data-aos="fade-up" data-aos-delay="150">
           <div class="project-top">
             <div class="project-category">AI & Automation</div>
-            <div class="project-links">
-              <a href="https://github.com/bharathifabi100-cmd" target="_blank" class="project-link-btn" aria-label="GitHub">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
           </div>
           <h3 class="project-title">AI SQL Analytics Agent with n8n</h3>
           <p class="project-desc">Automated SQL analytics workflow using n8n, MySQL, and Ollama AI to convert natural language into SQL queries, generate reports, extract insights, and deliver automated email reports.</p>
           <div class="project-tags">
-            <span>n8n</span><span>MySQL</span><span>Ollama AI</span><span>Automation</span>
+            <span>🔌 n8n</span><span>🛢️ MySQL</span><span>🤖 Ollama AI</span><span>⚙️ Automation</span>
           </div>
         </div>
 
@@ -461,16 +553,11 @@
         <div class="project-card" data-aos="fade-up" data-aos-delay="200">
           <div class="project-top">
             <div class="project-category">Cloud Analytics</div>
-            <div class="project-links">
-              <a href="https://github.com/bharathifabi100-cmd" target="_blank" class="project-link-btn" aria-label="GitHub">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
           </div>
           <h3 class="project-title">AWS Data Analytics Pipeline for E-Commerce Sales Analytics</h3>
           <p class="project-desc">Designed an end-to-end AWS data analytics pipeline using Amazon S3, AWS Glue, Amazon Athena, Amazon Redshift, and Amazon QuickSight for e-commerce sales analytics. Automated ETL, schema discovery, data transformation, and Parquet conversion using AWS Glue, and performed SQL analytics in Amazon Athena to generate business insights. Loaded data into Amazon Redshift and developed Amazon QuickSight dashboards for KPI reporting, data visualization, sales analytics, and business intelligence.</p>
           <div class="project-tags">
-            <span>AWS S3</span><span>AWS Glue</span><span>Athena</span><span>Redshift</span><span>QuickSight</span><span>ETL</span><span>Data Lake</span><span>SQL</span>
+            <span>☁️ AWS S3</span><span>⚙️ AWS Glue</span><span>🔍 Athena</span><span>📦 Redshift</span><span>📊 QuickSight</span><span>🔄 ETL</span><span>💧 Data Lake</span><span>🛢️ SQL</span>
           </div>
         </div>
       </div>
@@ -501,10 +588,6 @@
           <div class="cert-card" data-aos="flip-left" data-aos-delay="50">
             <div class="cert-top">
               <span class="cert-badge data">Data Analytics</span>
-              <a href="#" class="cert-pdf">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Verify
-              </a>
             </div>
             <h4 class="cert-title">GenAI Powered Data Analytics Virtual Intern</h4>
             <p class="cert-issuer">Tata (Forage)</p>
@@ -514,10 +597,6 @@
           <div class="cert-card" data-aos="flip-left" data-aos-delay="100">
             <div class="cert-top">
               <span class="cert-badge data">Data Analytics</span>
-              <a href="#" class="cert-pdf">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Verify
-              </a>
             </div>
             <h4 class="cert-title">Data Analytics Virtual Intern</h4>
             <p class="cert-issuer">Deloitte (Forage)</p>
@@ -527,10 +606,6 @@
           <div class="cert-card" data-aos="flip-left" data-aos-delay="150">
             <div class="cert-top">
               <span class="cert-badge security">SQL</span>
-              <a href="#" class="cert-pdf">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Verify
-              </a>
             </div>
             <h4 class="cert-title">SQL Intermediate</h4>
             <p class="cert-issuer">HackerRank</p>
@@ -540,10 +615,6 @@
           <div class="cert-card" data-aos="flip-left" data-aos-delay="200">
             <div class="cert-top">
               <span class="cert-badge cloud">Business Analytics</span>
-              <a href="#" class="cert-pdf">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Verify
-              </a>
             </div>
             <h4 class="cert-title">Business Analytics & Digital Marketing with AI Tools</h4>
             <p class="cert-issuer">IIT-M (GUVI | HCL)</p>
