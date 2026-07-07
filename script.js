@@ -20,7 +20,6 @@ document.getElementById('footerYear') && (document.getElementById('footerYear').
 // ============================================
 const navbar = document.getElementById('navbar');
 const heroBg = document.getElementById('home');
-const navHireBtn = document.getElementById('navHireBtn');
 
 let heroBottom = 0;
 
@@ -60,21 +59,25 @@ updateNavState();
 // ============================================
 const hamburger = document.getElementById('hamburger');
 const mobileDrawer = document.getElementById('mobileDrawer');
-const hamburgerPath = document.getElementById('hamburgerPath');
 
-hamburger.addEventListener('click', () => {
-  const isOpen = mobileDrawer.classList.toggle('open');
-  if (isOpen) {
-    hamburgerPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-  } else {
-    hamburgerPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-  }
-});
+if (hamburger && mobileDrawer) {
+  hamburger.addEventListener('click', () => {
+    mobileDrawer.classList.toggle('open');
+  });
+}
 
 function closeDrawer() {
-  mobileDrawer.classList.remove('open');
-  hamburgerPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+  if (mobileDrawer) {
+    mobileDrawer.classList.remove('open');
+  }
 }
+
+// Close drawer when a mobile link is clicked (with a delay to allow the scroll animation)
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    setTimeout(closeDrawer, 500);
+  });
+});
 
 // ============================================
 // SMOOTH SCROLL
@@ -455,12 +458,30 @@ if (contactBigText) {
 }
 
 // ============================================
-// ACTIVE NAV LINK HIGHLIGHT
+// ACTIVE NAV LINK HIGHLIGHT & SLIDING INDICATOR
 // ============================================
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id], #about');
+const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+const navIndicator = document.getElementById('navIndicator');
+const navLinksContainer = document.getElementById('navLinks');
 
-window.addEventListener('scroll', () => {
+function updateNavIndicator() {
+  if (!navIndicator || !navLinksContainer) return;
+  const activeLink = navLinksContainer.querySelector('.nav-link.active');
+  if (activeLink) {
+    const activeRect = activeLink.getBoundingClientRect();
+    const containerRect = navLinksContainer.getBoundingClientRect();
+    const leftOffset = activeRect.left - containerRect.left;
+    
+    navIndicator.style.width = `${activeRect.width}px`;
+    navIndicator.style.transform = `translateX(${leftOffset}px)`;
+    navIndicator.style.opacity = '1';
+  } else {
+    navIndicator.style.opacity = '0';
+  }
+}
+
+function handleScrollHighlight() {
   let current = '';
   sections.forEach(section => {
     const sectionTop = section.offsetTop - 120;
@@ -470,12 +491,112 @@ window.addEventListener('scroll', () => {
   });
 
   navLinks.forEach(link => {
+    link.classList.remove('active');
     link.style.opacity = '';
     link.style.fontWeight = '';
     const sectionId = link.getAttribute('data-section');
     if (sectionId === current) {
+      link.classList.add('active');
       link.style.opacity = '1';
       link.style.fontWeight = '700';
     }
   });
+
+  // Smoothly reposition the desktop slider line indicator
+  updateNavIndicator();
+}
+
+window.addEventListener('scroll', handleScrollHighlight);
+
+// Update slider line on resize and load
+window.addEventListener('resize', () => {
+  handleScrollHighlight();
+});
+window.addEventListener('load', () => {
+  handleScrollHighlight();
+  setTimeout(updateNavIndicator, 200); // Small delay to ensure styles are fully parsed
+});
+
+// Run once immediately to set initial position
+handleScrollHighlight();
+
+// ============================================
+// EXPANDABLE SKILLS CARD LOGIC
+// ============================================
+function toggleSkillCard(card) {
+  const allCards = document.querySelectorAll('.skill-category-card');
+  const isAlreadyExpanded = card.classList.contains('expanded');
+
+  // Collapse all cards
+  allCards.forEach(c => {
+    c.classList.remove('expanded');
+    const btn = c.querySelector('.skill-card-toggle-btn');
+    const p = c.querySelector('.skill-proficiency-panel');
+    if (btn) btn.textContent = '+';
+    if (p) {
+      p.style.maxHeight = "0px";
+      p.style.opacity = "0";
+    }
+  });
+
+  // If clicked card was not expanded, expand it
+  if (!isAlreadyExpanded) {
+    card.classList.add('expanded');
+    const btn = card.querySelector('.skill-card-toggle-btn');
+    const p = card.querySelector('.skill-proficiency-panel');
+    if (btn) btn.textContent = '−'; // Uses proper minus sign
+    if (p) {
+      p.style.maxHeight = p.scrollHeight + "px";
+      p.style.opacity = "1";
+    }
+  }
+}
+
+// ============================================
+// TYPING EFFECT LOGIC
+// ============================================
+const words = ["Business Analyst", "Data Analyst", "Data Engineer", "Cloud Analyst"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingDelay = 100;
+let erasingDelay = 60;
+let newWordDelay = 2000; // Delay between words
+
+function typeEffect() {
+  const typingTextSpan = document.getElementById("typingText");
+  if (!typingTextSpan) return;
+
+  const currentWord = words[wordIndex];
+  
+  if (isDeleting) {
+    // Delete character
+    typingTextSpan.textContent = currentWord.substring(0, charIndex - 1);
+    charIndex--;
+    typingDelay = erasingDelay;
+  } else {
+    // Type character
+    typingTextSpan.textContent = currentWord.substring(0, charIndex + 1);
+    charIndex++;
+    typingDelay = 100;
+  }
+
+  // Handle word completion / deletion completion
+  if (!isDeleting && charIndex === currentWord.length) {
+    // Word fully typed, pause before deleting
+    typingDelay = newWordDelay;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    // Word fully deleted, move to next word
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    typingDelay = 500; // Small delay before starting next word
+  }
+
+  setTimeout(typeEffect, typingDelay);
+}
+
+// Start typing animation once DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  setTimeout(typeEffect, 1000);
 });
